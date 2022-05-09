@@ -1,0 +1,110 @@
+Exercícios
+1- Criar um bloco PL-SQL para calcular e atualizar o VALOR PAGO dos TITULOS nas seguintes condições: 
+       Deverá informar o numero do título em tempo de execução.
+  Deverá fazer a seguinte calculo do valor pago.
+  Se o valor do título fore até 1000
+Os juros deverão ser 15% do valor  do título
+          Caso Contrário
+ 	Os juros deverão ser de 30% do valor do título
+          O Valor Pago deverá ser a soma do valor do título com o valor dos juros calculado.
+		   No final dar uma mensagem ‘VALOR PAGO CALCULADO = XXXXX’.
+
+
+2- Criar um bloco PL-SQL para calcular e atualizar o VALOR JUROS dos CLIENTES nas seguintes condições: 
+       Deverá informar o código do cliente  em tempo de execução.
+  Deverá fazer a seguinte calculo dos juros.
+  Se as vendas forem até 300
+Os juros deverão ser 20% do valor das vendas
+          Caso Contrário
+ 	Os juros deverão ser de 40% do valor das vendas
+          Deverá ser atualizado o VALOR DOS JUROS dos CLIENTES.
+		   No final dar uma mensagem ‘VALOR CALCULADO DOS JUROS = XXXXX’.
+
+
+
+3- Criar um bloco PL-SQL para calcular e atualizar o VALOR COMISSÃO dos FORNECEDORES nas seguintes condições: 
+       Deverá informar o código do fornecedor  em tempo de execução.
+ Deverá fazer a seguinte calculo para as comissões.
+  Se as vendas forem até 800
+As comissões deverão ser 10% do valor das vendas
+          Caso Contrário
+ 	As comissões deverão ser de 20% do valor das vendas.
+          Deverá ser atualizado o VALOR DAS COMISSÕES  dos FORNECEDORES.
+		   No final dar uma mensagem ‘VALOR CALCULADO DAS COMISSÕES = XXXXX’.
+
+
+4-Criar um bloco PL-SQL para calcular e atualizar o VALOR DA NOTA dos CLIENTES nas seguintes condições: 
+       Deverá informar o código do cliente em tempo de execução.
+  Deverá fazer a seguinte calculo para o VALOR NOTA.
+  Se as vendas forem até 3000
+Os juros deverão ser 20% do valor das vendas
+         Caso Contrário
+ 	Os juros deverão ser de 30% do valor das vendas
+          O VALOR NOTA  deverá ser a soma do valor das vendas com o valor dos juros calculado do
+         CLIENTE selecionado.
+		   No final dar uma mensagem ‘VALOR NOTA CALCULADO = XXXXX’.
+
+
+5- Criar um bloco PL-SQL para inserir títulos na tabela título, com base na leitura da tabela Cliente:
+      Deverá ser informado o código do cliente em tempo de execução.
+      Para o cliente lido deverão ser inseridos títulos de a acordo com o número de
+      parcelas do cliente..
+      Deverão ser inseridos títulos com os seguintes valores:
+        Codigo = código do cliente.
+        Numero do Título = Sequencial a partir de 100
+        Valor do título = valor da venda do cliente dividido pelo número de parcelas.
+        Valor dos Juros = 0, 
+        Valor dos Descontos = Deverá ser 15% do valor do título se o valor do 
+         título for até 700, caso contrário deverá ser de 20% do valor do título.
+        Valor Pago = 0, Data de Emissão = Data Corrente, 
+        Data Vencto = deverá ser de 30 em 30 dias a partir da data da emissão do cliente
+        Data de Pagamento = Nulos 
+          Usar a Lógica LOOP COM WHILE
+
+6- Criar um bloco PL-SQL para inserir títulos na tabela título, com base na leitura da tabela Cliente:
+      Deverá ser informado o código do cliente em tempo de execução.
+      Para o cliente lido deverão ser inseridos títulos de a acordo com o número de
+      parcelas do cliente..
+      Deverão ser inseridos títulos com os seguintes valores:
+        Codigo = código do cliente.
+        Numero do Título = Sequencial a partir de 200
+        Valor do título = valor da venda do cliente dividido pelo número de parcelas.
+        Valor dos Juros = 0, 
+        Valor dos Descontos = Deverá ser 20% do valor do título se o valor do 
+         título for até 700, caso contrário deverá ser de 30% do valor do título.
+        Valor Pago = 0, Data de Emissão = Data Corrente, 
+        Data Vencto = deverá ser de 30 em 30 dias a partir da data da emissão do cliente
+        Data de Pagamento = Nulos 
+          Usar a Lógica LOOP COM EXIT
+
+
+7- Criar um bloco PL-SQL para inserir títulos na tabela título, com base na leitura da tabela Cliente:
+      Deverá ser informado o código do cliente em tempo de execução.
+      Para o cliente lido deverão ser inseridos títulos de a acordo com o número de
+      parcelas do cliente..
+      Deverão ser inseridos títulos com os seguintes valores:
+        Codigo = código do cliente.
+        Numero do Título = Sequencial a partir de 300
+        Valor do título = valor da venda do cliente dividido pelo número de parcelas.
+        Valor dos Juros = 0, 
+        Valor dos Descontos = Deverá ser 35% do valor do título se o valor do 
+         título for até 700, caso contrário deverá ser de 40% do valor do título.
+        Valor Pago = 0, Data de Emissão = Data Corrente, 
+        Data Vencto = deverá ser de 30 em 30 dias a partir da data da emissão do cliente
+        Data de Pagamento = Nulos 
+          Usar a Lógica LOOP COM A OPÇÃO FOR
+
+	       					
+                      
+8- Criar um bloco PL-SQL para calcular e atualizar o VALOR PAGO dos CLIENTES nas seguintes condições: 
+       Deverá informar o código do cliente em tempo de execução.
+  Caso não encontre dar a mensagem ‘CLIENTE NÃO ENCONTRADO’.
+  Caso encontre deverá fazer a seguinte calculo do valor pago.
+  Se as vendas forem até 3000
+Os juros deverão ser 15% do valor das vendas
+         Se as vendas forem de 3001 a 5000
+Os juros deverão ser 15% do valor das vendas
+  Caso Contrário
+ 	Os juros deverão ser de 30% do valor das vendas
+          O Valor Pago deverá ser a soma do valor das vendas com o valor dos juros calculado.
+		   No final dar uma mensagem ‘VALOR PAGO CALCULADO = XXXXX’.
