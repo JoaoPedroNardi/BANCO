@@ -49,13 +49,13 @@ historico	varchar2(30),
 CONSTRAINT conta_fk FOREIGN KEY (n_conta) REFERENCES conta (n_conta));
  
 INSERT INTO lanc VALUES ('01-03-2001',2,106,2000000,'Deposito inicial');
-INSERT INTO lanc VALUES ('15-03-2001',5,107,32500,'Cartão de crédito');
+INSERT INTO lanc VALUES ('15-03-2001',5,107,32500,'Cartï¿½o de crï¿½dito');
 INSERT INTO lanc VALUES ('01-04-2001',1,108,-100000,'Saque');
 INSERT INTO lanc VALUES ('01-04-2001',2,109,100000,'Deposito');
 INSERT INTO lanc VALUES ('20-04-2001',3,110,80000,'Deposito');
 INSERT INTO lanc VALUES ('21-04-2001',4,111,-8700,'Conta de telefone');
-INSERT INTO lanc VALUES ('21-04-2001',1,112,-5000,'Saque p/ transferência');
-INSERT INTO lanc VALUES ('21-04-2001',4,113,5000,'Deposito de transferência');
+INSERT INTO lanc VALUES ('21-04-2001',1,112,-5000,'Saque p/ transferï¿½ncia');
+INSERT INTO lanc VALUES ('21-04-2001',4,113,5000,'Deposito de transferï¿½ncia');
 INSERT INTO lanc VALUES ('22-04-2001',1,114,35000,'deposito');
  
 Drop table a_fazer;
@@ -65,8 +65,8 @@ feito	varchar2(1),
 Data 	DATE NOT NULL ,
 Observ 	varchar2(60) NOT NULL);
  
-INSERT INTO a_fazer VALUES ('S','14-03-2001','Avisar ANA: cartão de credito = 32500');
-INSERT INTO a_fazer VALUES ('S','01-04-2001','Enviar extrato da poupança 2 para RENATA');
+INSERT INTO a_fazer VALUES ('S','14-03-2001','Avisar ANA: cartï¿½o de credito = 32500');
+INSERT INTO a_fazer VALUES ('S','01-04-2001','Enviar extrato da poupanï¿½a 2 para RENATA');
 INSERT INTO a_fazer VALUES ('S','14-04-2001','Enviar conta de telefone para ANA');
 
 Drop table erro;
@@ -76,7 +76,7 @@ data		DATE NOT NULL,
 descricao	varchar2(60));
  	
 INSERT INTO erro  VALUES (
-'01-04-2001','Saque de 12000 de conta 5 não realizado por falta de fundos');
+'01-04-2001','Saque de 12000 de conta 5 nï¿½o realizado por falta de fundos');
 
 Drop table cliente cascade constraints;
 
@@ -114,7 +114,7 @@ valor_titulo   number(11,2) not null,
 valor_juros    number(11,2) not null,
 valor_desconto number(11,2) not null,
 valor_pago     number(11,2) not null,
-data_emissão   date,
+data_emissï¿½o   date,
 data_vencto    date,
 data_pagto     date);
 
@@ -128,6 +128,7 @@ insert into titulo values (10,3000,1000,1,1,1,sysdate,sysdate,sysdate);
 
 **exercicio 1**
 
+*********************************************************
 set serveroutput on
 set verify off
 
@@ -150,9 +151,33 @@ BEGIN
 END;
 
 SELECT * FROM TITULO
+*********************************************************
 
+**exercicio 1 cursor**
 
-**exercicio 1**
+*********************************************************
+DECLARE
+    cursor c_atualiza is select num_titulo, valor_titulo, valor_pago from titulo;
+BEGIN
+    --realizando a atualizaÃ§Ã£o
+    for v_atualiza in c_atualiza loop
+        if v_atualiza.valor_titulo <= 1000 then
+            update titulo set valor_pago = v_atualiza.valor_titulo * 1.15 where num_titulo = v_atualiza.num_titulo;
+        else
+            update titulo set valor_pago = v_atualiza.valor_titulo * 1.3 where num_titulo = v_atualiza.num_titulo;
+        end if;
+    END LOOP;
+    --exibindo resultados
+    for v_atualiza in c_atualiza loop
+        dbms_output.put_line('valor pago - R$ '|| v_atualiza.valor_pago);
+    END LOOP;
+END;
+
+*********************************************************
+
+**exercicio 2**
+
+*********************************************************
 
 DECLARE
 
@@ -173,6 +198,8 @@ END;
 
 SELECT * FROM CLIENTE
 
+*********************************************************
 
+**exercicio 2 cursor**
 
-
+*********************************************************
